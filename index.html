@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MakeUp Tips 💖</title>
+    
+    <!-- AQUI COMEÇA O CSS (ESTILO) -->
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fff0f5; /* Fundo rosa bem clarinho */
+            color: #4a4a4a;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #ffb6c1; /* Rosa pastel */
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: #ff69b4; /* Rosa pink */
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        /* Estilo do botão e da área de dicas */
+        .area-interativa {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #ffe4e1;
+            border-radius: 10px;
+        }
+
+        button {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1.1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #ff1493; /* Rosa mais escuro no hover */
+        }
+
+        #dica-texto {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #d23669;
+            min-height: 60px; /* Mantém o espaço para o texto não pular */
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            color: #888;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- AQUI COMEÇA O HTML (ESTRUTURA) -->
+    <header>
+        <h1>MakeUp Tips 💖</h1>
+        <p>Seu guia rápido para uma maquiagem perfeita</p>
+    </header>
+
+    <div class="container">
+        <h2>O Segredo da Pele Perfeita</h2>
+        <p>A maquiagem começa muito antes da base! O segredo número um dos maquiadores profissionais é o famoso <strong>Skincare</strong>. Limpar, tonificar e hidratar a pele garante que a maquiagem dure mais tempo e não craquele ao longo do dia.</p>
+        
+        <h2>Os 3 Produtos Essenciais</h2>
+        <ul>
+            <li><strong>Corretivo:</strong> Para iluminar e esconder manchinhas.</li>
+            <li><strong>Blush/Lip Tint:</strong> Para dar aquele ar de saúde (e pode ser usado nos lábios e bochechas!).</li>
+            <li><strong>Máscara de Cílios:</strong> Para abrir o olhar instantaneamente.</li>
+        </ul>
+
+        <div class="area-interativa">
+            <h2>Gerador de Dicas de Make ✨</h2>
+            <p>Clique no botão abaixo para receber uma dica surpresa de maquiagem!</p>
+            <button onclick="gerarDica()">Me dê uma dica!</button>
+            <p id="dica-texto"></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Criado com 💖 usando HTML, CSS e JS no GitHub Pages</p>
+    </footer>
+
+    <!-- AQUI COMEÇA O JAVASCRIPT (INTERATIVIDADE) -->
+    <script>
+        // Lista de dicas guardadas em uma Array
+        const dicasDeMake = [
+            "Esfumar é o segredo! Use um pincel fofinho e faça movimentos circulares para a sombra não ficar marcada.",
+            "Para o batom durar mais, aplique uma camada, tire o excesso com um lenço de papel, passe um pouco de pó translúcido e aplique outra camada de batom.",
+            "Use um primer antes da base para disfarçar os poros e aumentar a durabilidade da sua make.",
+            "Se o delineador gatinho der errado, limpe o cantinho com um cotonete e um pouco de demaquilante ao invés de tentar engrossar o traço!",
+            "Iluminador no cantinho interno dos olhos ajuda a abrir o olhar e dá um ar mais descansado.",
+            "Sempre hidrate a região das olheiras antes do corretivo para evitar que o produto acumule nas linhas finas."
+        ];
+
+        // Função que é ativada quando clicamos no botão
+        function gerarDica() {
+            // Sorteia um número aleatório baseado na quantidade de dicas
+            const numeroSorteado = Math.floor(Math.random() * dicasDeMake.length);
+            
+            // Pega o elemento de texto no HTML e troca pela dica sorteada
+            const elementoTexto = document.getElementById("dica-texto");
+            elementoTexto.innerHTML = "✨ " + dicasDeMake[numeroSorteado];
+        }
+    </script>
+</body>
+</html>
