@@ -146,4 +146,5 @@
             elementoTexto.innerHTML = "✨ " + dicasDeMake[numeroSorteado];
         }
     </script>
-</body
+</body>
+</html>
